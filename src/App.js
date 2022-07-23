@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './Pages/Home/Home';
+import Nav from './Pages/Share/Nav';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className='bg-base-200'>
-      <Home />
+    <div className="">
+      <Nav/>
     </div>
   );
 }
