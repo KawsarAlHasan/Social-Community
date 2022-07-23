@@ -7,7 +7,13 @@ function App() {
   return (
     <div className="">
       <Nav/>
-      <h1>This is code .</h1>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/network' element={<Home/>}/>
+        <Route path='/jobs' element={<Home/>}/>
+        <Route path='/messaging' element={<Home/>}/>
+        <Route path='/notification' element={<Home/>}/>
+      </Routes>
     </div>
   );
 }
