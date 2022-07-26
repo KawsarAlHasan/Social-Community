@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Slidebar = (props) => {
+const Sidebar = (props) => {
     const sectionRecent = ["node", "react", "mern-stack"];
     const sectionGroups = ["react-community", "programming-hero"];
     const sectionHashTags = [
@@ -40,31 +40,31 @@ const Slidebar = (props) => {
                     </svg></span> My Items</Link>
                 </div>
             </div>
-
+            
             {/* secound part */}
             <div className="card w-64 bg-base-100 shadow-xl mt-3 sticky top-0">
                 <div className="mt-2 px-4">
                     <Link to='/#' className='hover:text-primary'> Recent </Link>
                     {sectionRecent.map((title, i) => (
-                        <>
-                            <div key={i} className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
+                        <div key={i}>
+                            <div className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
                                 <span className='mx-1'>#</span>
                                 <p>{title}</p>
                             </div>
-                        </>
+                        </div>
                     ))}
                     <Link to='/#' className='hover:text-primary'> Groups </Link>
                     {sectionGroups.map((title, i) => (
-                        <>
-                            <div key={i} className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
+                        <div key={i}>
+                            <div className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
                                 <span className='mx-1'>#</span>
                                 <p>{title}</p>
                             </div>
-                        </>
+                        </div>
                     ))}
                     <p className='flex justify-between mb-1'><Link to='/#' className=' hover:text-primary'>Events</Link>
                         
-                        <label for="my-modal-6" className="cursor-pointer modal-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" className="mercado-match" width="16" height="16" focusable="false">
+                        <label htmlFor="my-modal-6" className="cursor-pointer modal-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" className="mercado-match" width="16" height="16" focusable="false">
                             <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
                         </svg></label>
 
@@ -74,7 +74,7 @@ const Slidebar = (props) => {
                                 <h3 className="font-bold text-lg">Events</h3>
                                 <p className="py-4">Events comming soon next week 🚀</p>
                                 <div className="modal-action">
-                                    <label for="my-modal-6" className="btn">Yay!</label>
+                                    <label htmlFor="my-modal-6" className="btn">Yay!</label>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +82,12 @@ const Slidebar = (props) => {
 
                     <Link to='/#' className='hover:text-primary'> Followed Hashtags </Link>
                     {sectionHashTags.map((title, i) => (
-                        <>
-                            <div key={i} className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
+                        <div key={i}>
+                            <div className='flex text-gray-400 p-1 hover:bg-base-300 font-semibold hover:text-black'>
                                 <span className='mx-1'>#</span>
                                 <p>{title}</p>
                             </div>
-                        </>
+                        </div>
                     ))}
                 </div>
                 <div className="divider -mb-3 mt-1"></div>
@@ -101,4 +101,4 @@ const Slidebar = (props) => {
     );
 };
 
-export default Slidebar;
+export default Sidebar;
