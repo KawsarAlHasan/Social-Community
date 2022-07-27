@@ -13,7 +13,7 @@ const Sidebar = (props) => {
     return (
         <div className=''>
             {/* first part */}
-            <div className="card w-64 bg-base-100 shadow-xl">
+            <div className="card sm:w-10/12 md:w-64 sm:mx-auto bg-base-100 shadow-xl">
                 <div className=" h-20 card place-items-center">
                     <img src='https://tandsgo.com/wp-content/uploads/2020/02/Abstract-blue-and-orange-pattern.jpg' alt='no internet' />
                 </div>
@@ -42,7 +42,7 @@ const Sidebar = (props) => {
             </div>
             
             {/* secound part */}
-            <div className="card w-64 bg-base-100 shadow-xl mt-3 sticky top-0">
+            <div className="sm:hidden md:block card w-64 bg-base-100 shadow-xl mt-3 sticky top-0">
                 <div className="mt-2 px-4">
                     <Link to='/#' className='hover:text-primary'> Recent </Link>
                     {sectionRecent.map((title, i) => (
