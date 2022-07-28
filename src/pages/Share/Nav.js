@@ -6,15 +6,23 @@ const Nav = () => {
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <Link to='/' className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <img className="w-10 h-10" src={logo} />
           <span className="ml-3 text-xl">Social Community</span>
-        </a>
+        </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link to='/' className="mr-5 hover:text-gray-900">Home</Link>
           <Link to='/network' className="mr-5 hover:text-gray-900">My Network</Link>
           <Link to='/jobs'className="mr-5 hover:text-gray-900">Jobs</Link>
           <Link to='/messaging' className="mr-5 hover:text-gray-900">Messaging</Link>
+          <Link to='/userPage' className="mr-5 hover:text-gray-900">
+          <div className="avatar">
+                        <div className="w-6 rounded-full">
+                            <img src="https://placeimg.com/192/192/people" alt='no internet' />
+                        </div>
+                    </div>
+            
+          </Link>
         </nav>
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           Button
