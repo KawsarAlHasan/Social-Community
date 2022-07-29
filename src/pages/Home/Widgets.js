@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import nahid from '../../Asset/images/NahidVai.jpg'
+import kawsar from '../../Asset/images/kawsar.png'
+import mukarrom from '../../Asset/images/mukarromjpg.jpg'
+import sabuj from '../../Asset/images/SabujMahonto.jpg'
 
 const Widgets = (props) => {
     return (
@@ -18,11 +22,11 @@ const Widgets = (props) => {
                             <div className="flex items-center space-x-3 mt-2">
                                 <div className="avatar">
                                     <div className="mask rounded-full w-12 h-12">
-                                        <img src="https://placeimg.com/192/192/people" alt='no internet' />
+                                        <img src={kawsar} alt='no internet' />
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="font-semibold">Isha Narang</div>
+                                    <div className="font-semibold">Kawsar Al Hasan-</div>
                                     <div className="text-sm opacity-60">Talent Attraction, Acquisition</div>
                                     <button className="btn btn-xs btn-active rounded-full btn-ghost">+ Follow</button>
                                 </div>
@@ -34,11 +38,11 @@ const Widgets = (props) => {
                             <div className="flex items-center space-x-3 mt-2">
                                 <div className="avatar">
                                     <div className="mask rounded-full w-12 h-12">
-                                        <img src="https://placeimg.com/192/192/people" alt='no internet' />
+                                        <img src={nahid} alt='no internet' />
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="font-semibold">Alexa</div>
+                                    <div className="font-semibold">Nahid Ahmmed</div>
                                     <div className="text-sm opacity-60">Talent Attraction, Acquisition</div>
                                     <button className="btn btn-xs btn-active rounded-full btn-ghost">+ Follow</button>
                                 </div>
@@ -50,11 +54,27 @@ const Widgets = (props) => {
                             <div className="flex items-center space-x-3 mt-2">
                                 <div className="avatar">
                                     <div className="mask rounded-full w-12 h-12">
-                                        <img src="https://placeimg.com/192/192/people" alt='no internet' />
+                                        <img src={mukarrom} alt='no internet' />
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="font-semibold">Jenny</div>
+                                    <div className="font-semibold">Mukarrom Hosain</div>
+                                    <div className="text-sm opacity-60">Talent Attraction, Acquisition</div>
+                                    <button className="btn btn-xs btn-active rounded-full btn-ghost">+ Follow</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div className="flex items-center space-x-3 mt-2">
+                                <div className="avatar">
+                                    <div className="mask rounded-full w-12 h-12">
+                                        <img src={sabuj} alt='no internet' />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="font-semibold">Sabuj Mahonto</div>
                                     <div className="text-sm opacity-60">Talent Attraction, Acquisition</div>
                                     <button className="btn btn-xs btn-active rounded-full btn-ghost">+ Follow</button>
                                 </div>
