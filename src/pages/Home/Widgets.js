@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Widgets = (props) => {
     return (
-        <div>
-            <div className="card w-72 bg-base-100 shadow-xl sticky top-0">
+        <div className='sticky top-20'>
+            <div className="card w-72 bg-base-100 shadow-xl ">
                 <div className="">
                     <p className=' mt-3 flex justify-between font-semibold px-4'> Add to your feed <span className='text-primary'>
                         <Link to="/#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" className="mt-1 mercado-match" width="16" height="16" focusable="false">
