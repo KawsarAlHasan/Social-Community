@@ -1,6 +1,7 @@
+import { faComment, faHeart, faPaperPlane, faPlus, faShare, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faComment, faShare, faPaperPlane, faHeart, faPlus } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import nahidimg from '../../Asset/images/NahidVai.jpg'
 
 const Card = () => {
   return (
@@ -9,12 +10,12 @@ const Card = () => {
         <div className='flex mx-3 my-3'>
           <div className='avatar'>
             <div className="ml-0 w-12 h-12 rounded-full">
-              <img src="https://placeimg.com/192/192/people" />
+              <img src={nahidimg} alt='rondom-img' />
             </div>
           </div>
           <div className='flex justify-between'>
             <div>
-              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed Likhon</h4>
+              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed ">Nahid Ahmmed </h4>
               <p className='text-zinc-400 px-2'>Junior web developer</p>
             </div>
             <div>
@@ -31,7 +32,7 @@ const Card = () => {
         </div>
 
         <div className="card w-full bg-base-100 shadow-xl">
-          <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+          <figure className='w-full'><img src={nahidimg} alt='random-img' /></figure>
           <div className='flex justify-between mt-4'>
             <div className='ml-3 space-x-1 flex'>
               <p className='text-red-500'><FontAwesomeIcon icon={faHeart} /></p><p className='text-blue-600'><FontAwesomeIcon icon={faThumbsUp} /></p><p className='text-zinc-400  hover:underline cursor-pointer'>31</p>
@@ -87,12 +88,12 @@ const Card = () => {
         <div className='flex mx-3 my-3'>
           <div className='avatar'>
             <div className="ml-0 w-12 h-12 rounded-full">
-              <img src="https://placeimg.com/192/192/people" />
+              <img src="https://placeimg.com/192/192/people" alt='random-img'/>
             </div>
           </div>
           <div className='flex justify-between'>
             <div>
-              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed Likhon</h4>
+              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed </h4>
               <p className='text-zinc-400 px-2'>Junior web developer</p>
             </div>
             <div>
@@ -109,7 +110,7 @@ const Card = () => {
         </div>
 
         <div className="card w-full bg-base-100 shadow-xl">
-          <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+          <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt='random-img' /></figure>
           <div className='flex justify-between mt-4'>
             <div className='ml-3 space-x-1 flex'>
               <p className='text-red-500'><FontAwesomeIcon icon={faHeart} /></p><p className='text-blue-600'><FontAwesomeIcon icon={faThumbsUp} /></p><p className='text-zinc-400  hover:underline cursor-pointer'>31</p>
@@ -165,12 +166,12 @@ const Card = () => {
         <div className='flex mx-3 my-3'>
           <div className='avatar'>
             <div className="ml-0 w-12 h-12 rounded-full">
-              <img src="https://placeimg.com/192/192/people" />
+              <img src="https://placeimg.com/192/192/people" alt='random-img' />
             </div>
           </div>
           <div className='flex justify-between'>
             <div>
-              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed Likhon</h4>
+              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed ">Nahid Ahmmed </h4>
               <p className='text-zinc-400 px-2'>Junior web developer</p>
             </div>
             <div>
@@ -187,7 +188,7 @@ const Card = () => {
         </div>
 
         <div className="card w-full bg-base-100 shadow-xl">
-          <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+          <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt='random-img' /></figure>
           <div className='flex justify-between mt-4'>
             <div className='ml-3 space-x-1 flex'>
               <p className='text-red-500'><FontAwesomeIcon icon={faHeart} /></p><p className='text-blue-600'><FontAwesomeIcon icon={faThumbsUp} /></p><p className='text-zinc-400  hover:underline cursor-pointer'>31</p>
@@ -243,12 +244,12 @@ const Card = () => {
         <div className='flex mx-3 my-3'>
           <div className='avatar'>
             <div className="ml-0 w-12 h-12 rounded-full">
-              <img src="https://placeimg.com/192/192/people" />
+              <img src="https://placeimg.com/192/192/people" alt='random-img'/>
             </div>
           </div>
           <div className='flex justify-between'>
             <div>
-              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed Likhon</h4>
+              <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed </h4>
               <p className='text-zinc-400 px-2'>Junior web developer</p>
             </div>
             <div>
@@ -321,12 +322,12 @@ const Card = () => {
       <div className='flex mx-3 my-3'>
         <div className='avatar'>
           <div className="ml-0 w-12 h-12 rounded-full">
-            <img src="https://placeimg.com/192/192/people" />
+            <img src="https://placeimg.com/192/192/people" alt='random-img' />
           </div>
         </div>
         <div className='flex justify-between'>
           <div>
-            <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed Likhon">Nahid Ahmmed Likhon</h4>
+            <h4 className='ml-2 font-semibold tooltip tooltip-left hover:text-blue-600 hover:underline cursor-pointer' data-tip="Nahid Ahmmed ">Nahid Ahmmed </h4>
             <p className='text-zinc-400 px-2'>Junior web developer</p>
           </div>
           <div>
@@ -343,7 +344,7 @@ const Card = () => {
       </div>
 
       <div className="card w-full bg-base-100 shadow-xl">
-        <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <figure className='w-full'><img src="https://placeimg.com/400/225/arch" alt='random-img' /></figure>
         <div className='flex justify-between mt-4'>
           <div className='ml-3 space-x-1 flex'>
             <p className='text-red-500'><FontAwesomeIcon icon={faHeart} /></p><p className='text-blue-600'><FontAwesomeIcon icon={faThumbsUp} /></p><p className='text-zinc-400  hover:underline cursor-pointer'>31</p>
