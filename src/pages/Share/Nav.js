@@ -1,16 +1,27 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Asset/images/logo.png";
+import auth from "../../firebase.init";
 
 const Nav = () => {
+
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  const logout = () => {
+    signOut(auth);
+    navigate("/login");
+  };
+
   return (
     <header className="text-gray-600 body-font bg-[#f3f9fd] sticky top-0 z-50">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
-        <a className="flex title-font font-medium items-center
+        <a href="" className="flex title-font font-medium items-center
          text-gray-900 mb-4 md:mb-0">
           <img className="w-10 h-10" src={logo} alt="random img" />
           <span className="ml-3 text-xl">Social Community</span>
-        </a>
+       </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link to="/" className="mr-5 hover:text-gray-900">
             Home
@@ -24,8 +35,37 @@ const Nav = () => {
           <Link to="/messaging" className="mr-5 hover:text-gray-900">
             Messaging
           </Link>
+          {/* <Link to="/login" className="mr-5 hover:text-gray-900">
+            Login
+            mr-5 hover:text-gray-900 
+          </Link> */}
+          
+            <span className="mt-5 md:mt-0 list-item-none">
+              {!user && (
+                <Link
+                  className="bg-yellow-500 hover:bg-[#f2a70c] hover:shadow-md text-black px-4 py-2 rounded-full"
+                  to="/signup"
+                >
+                  Sign up
+                </Link>
+              )}
+            </span>
+
+            {!user ? (
+                <Link to="/login" className="bg-yellow-500 hover:bg-[#f2a70c] hover:shadow-md text-black px-4 py-2 rounded-full">
+                  Login
+                </Link>
+              ) : (
+                <button
+                  onClick={logout}
+                  className="hover:text-[#f2a70c]"
+                >
+                  Logout
+                </button>
+              )}
+         
         </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+        {/* <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           Button
           <svg
             fill="none"
@@ -38,7 +78,7 @@ const Nav = () => {
           >
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
-        </button>
+        </button> */}
       </div>
     </header>
   );
