@@ -13,7 +13,7 @@ const Sidebar = (props) => {
     return (
         <div className=''>
             {/* first part */}
-            <div className="card sm:w-10/12 md:w-64 sm:mx-auto bg-base-100 shadow-xl">
+            <div className="card sm:w-10/12 md:w-64 sm:mx-auto bg-base-100 shadow-xl sticky top-0">
                 <div className=" h-20 card place-items-center">
                     <img src='https://tandsgo.com/wp-content/uploads/2020/02/Abstract-blue-and-orange-pattern.jpg' alt='no internet' />
                 </div>

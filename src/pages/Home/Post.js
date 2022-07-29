@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera, faVideo, faCalendarDay, faFilePen } from '@fortawesome/free-solid-svg-icons'
+import sabujImg from '../../Asset/images/SabujMahonto.jpg'
 
 
 const Post = () => {
@@ -9,7 +10,7 @@ const Post = () => {
       <div className="card-body ">
         <div className="avatar">
           <div className="ml-0 w-12 h-12 rounded-full">
-            <img src="https://placeimg.com/192/192/people" />
+            <img src={sabujImg} alt='random-img'/>
           </div>
           <div>
             <input type="text" placeholder="Type here" className="input input-bordered w-96 rounded-3xl ml-1" />
