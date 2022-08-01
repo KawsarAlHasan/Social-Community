@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import WidgetsImg from '../../images/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png'
+import WidgetsImg from '../assets/images/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png'
 
 function UserWidgets() {
   return (
@@ -59,7 +59,7 @@ function UserWidgets() {
         <img src={WidgetsImg} alt="no internet" />
       </div>
 
-      <div className="card sm:mx-auto md:mx-0 sm:w-5/6 md:w-80 bg-base-100 shadow-xl sticky top-0 pb-4">
+      <div className="card sm:mx-auto md:mx-0 sm:w-5/6 md:w-80 bg-base-100 shadow-xl sticky top-[72px] pb-4">
         <div className="">
           <p className=" mt-3 font-semibold px-4"> People you may know </p>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Footer from '../Share/Footer'
-import UserInfo from './UserInfo'
-import UserWidgets from './UserWidgets'
+import Footer from '../../components/Footer'
+import UserInfo from '../../components/UserInfo'
+import UserWidgets from '../../components/UserWidgets'
 
-function UserPage() {
+function UserProfile() {
   return (
     <div className="bg-base-200">
       <div className="grid grid-cols-12">
@@ -19,4 +19,4 @@ function UserPage() {
   )
 }
 
-export default UserPage
+export default UserProfile

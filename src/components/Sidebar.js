@@ -72,7 +72,7 @@ const Sidebar = (props) => {
       </div>
 
       {/* secound part */}
-      <div className="sm:hidden md:block card w-64 bg-base-100 shadow-xl mt-3 sticky top-0">
+      <div className="sm:hidden md:block card w-64 bg-base-100 shadow-xl mt-3 sticky top-[72px]">
         <div className="mt-2 px-4">
           <Link to="/#" className="hover:text-primary">
             {' '}
