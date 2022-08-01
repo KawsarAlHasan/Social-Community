@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import icon from '../../images/icon.png'
+import icon from '../assets/images/icon.png'
 
 function UserInfo() {
   return (

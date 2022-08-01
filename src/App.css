@@ -1,0 +1,21 @@
+:root {
+  --textColor: #000;
+  --backgroundColor: #fff;
+}
+[data-theme='dark'] {
+  --textColor: #fff;
+  --backgroundColor: #000;
+}
+
+.App {
+  color: var(--textColor);
+  background: var(--backgroundColor);
+}
+
+.demo {
+  position: relative;
+}
+
+.mode {
+  position: absolute;
+}
