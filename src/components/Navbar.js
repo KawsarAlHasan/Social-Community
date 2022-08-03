@@ -28,7 +28,7 @@ const Navbar = ({ children }) => {
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="https://placeimg.com/80/80/people" />
+            <img src="https://placeimg.com/80/80/people" alt='img' />
           </div>
         </label>
         <ul
