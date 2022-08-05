@@ -1,13 +1,14 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import Login from './authentication/Login/Login'
+import ResetPassword from './authentication/Login/ResetPassword'
+import SignUp from './authentication/Login/SignUp'
+import PrivateRoutes from './authentication/routes/PrivateRoutes'
+import RedirectToAccount from './authentication/routes/RedirectToAccount'
 import Navbar from './components/Navbar'
 import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
-import Login from './authentication/Login/Login'
-import SignUp from './authentication/Login/SignUp'
-import RedirectToAccount from './authentication/routes/RedirectToAccount'
-import PrivateRoutes from './authentication/routes/PrivateRoutes'
-import ResetPassword from './authentication/Login/ResetPassword'
+import UserProfile from './pages/UserProfile/UserProfile'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
  
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/userProfile" element={<UserProfile></UserProfile>}></Route>
         <Route
           path="/signup"
           element={
@@ -31,6 +33,7 @@ function App() {
             <PrivateRoutes>
               <Home></Home>
               <Navbar></Navbar>
+              
             </PrivateRoutes>
           }
         ></Route>
