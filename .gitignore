@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+_redirects
+
 # testing
 /coverage
 
