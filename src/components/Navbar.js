@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
+import img from '../assets/images/logo.png'
 
 const Navbar = ({ children }) => {
   const [dark, setDark] = useState(false)
@@ -28,7 +29,7 @@ const Navbar = ({ children }) => {
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src="https://placeimg.com/80/80/people" alt='img' />
+            <img src={img} alt='img' />
           </div>
         </label>
         <ul

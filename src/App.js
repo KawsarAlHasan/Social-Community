@@ -12,8 +12,7 @@ function App() {
       <Navbar>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/userProfile" element={<UserProfile />} />
-          <Route path="/messaging" element={<Messages />} />
+          
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Navbar>
