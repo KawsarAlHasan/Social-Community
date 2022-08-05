@@ -1,11 +1,22 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 import img from '../assets/images/logo.png'
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = ({ children }) => {
   const [dark, setDark] = useState(false)
 
+  
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    signOut(auth);
+    navigate("/login");
+  };
   const menuItems = (
     <>
       <li>
@@ -29,7 +40,7 @@ const Navbar = ({ children }) => {
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
-            <img src={img} alt='img' />
+            <img src={user?.photoURL ? user?.photoURL : img} alt='img' />
           </div>
         </label>
         <ul
@@ -47,7 +58,7 @@ const Navbar = ({ children }) => {
             </Link>
           </li>
           <li>
-            <Link to="/logOut" className="hover:text-gray-900">
+            <Link to="/logOut" onClick={logout} className="hover:text-gray-900">
               Logout
             </Link>
           </li>
@@ -103,11 +114,11 @@ const Navbar = ({ children }) => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            <img className="w-10 h-10 mr-1" src={logo} />
+            <img className="w-10 h-10 mr-1" src={logo} alt='logo' />
             Social Community
           </Link>
 
-          <div class="form-control">
+          <div className="form-control">
             <input
               type="text"
               placeholder="Search"

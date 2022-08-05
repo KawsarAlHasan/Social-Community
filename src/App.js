@@ -2,20 +2,51 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home/Home'
-import UserProfile from './pages/UserProfile/UserProfile'
 import NotFound from './pages/NotFound/NotFound'
-import Messages from './pages/Messages/Messages'
+import Login from './authentication/Login/Login'
+import SignUp from './authentication/Login/SignUp'
+import RedirectToAccount from './authentication/routes/RedirectToAccount'
+import PrivateRoutes from './authentication/routes/PrivateRoutes'
+import ResetPassword from './authentication/Login/ResetPassword'
+
 
 function App() {
   return (
     <div>
-      <Navbar>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      </Navbar>
+      
+      <Routes>
+ 
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route
+          path="/signup"
+          element={
+            <RedirectToAccount>
+              <SignUp></SignUp>
+            </RedirectToAccount>
+          }
+        ></Route>
+        <Route
+          path="/"
+          element={
+            <PrivateRoutes>
+              <Home></Home>
+              <Navbar></Navbar>
+            </PrivateRoutes>
+          }
+        ></Route>
+        <Route
+          path="/reset-password"
+          element={
+            <RedirectToAccount>
+              <ResetPassword></ResetPassword>
+            </RedirectToAccount>
+          }
+        ></Route>
+        
+        
+        <Route path="*" element={<NotFound></NotFound>}></Route>
+      </Routes>
+     
     </div>
   )
 }

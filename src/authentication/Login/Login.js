@@ -9,7 +9,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
-import Loading from "../../pages/Share/Loading";
+import Loading from "../../components/Loading";
 
 const Login = () => {
   const [userAuth] = useAuthState(auth);
