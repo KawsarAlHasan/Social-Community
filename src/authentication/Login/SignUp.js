@@ -3,57 +3,71 @@ import loginImage from "../../assets/images/download.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Login/SocialLogin";
 import { BsArrowLeft } from "react-icons/bs";
-import {
-  useAuthState,
-  useSignInWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../../components/Loading";
 
-const Login = () => {
-  const [userAuth] = useAuthState(auth);
+const SignUp = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile] = useUpdateProfile(auth);
+  const [sendEmailVerification] = useSendEmailVerification(auth);
+  const [pass, conPass] = watch(["password", "confirmPassword"]);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const [signInWithEmailAndPassword, user, loading, loginError] =
-    useSignInWithEmailAndPassword(auth);
-
-  const handleLogin = (data) => {
-    const { email, password } = data;
-    signInWithEmailAndPassword(email, password);
+  const handleSignUp = async (data) => {
+    if (pass === conPass) {
+      const { displayName, email, password } = data;
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName });
+      await sendEmailVerification();
+    }
   };
-
-  if (userAuth) {
+  if (user) {
     navigate(from, { replace: true });
   }
   if (loading) {
     return <Loading></Loading>;
   }
+
   return (
     <div className="bg-[#c4e0f0] px-3">
       <div className="container mx-auto flex flex-col lg:flex-row justify-center items-end md:gap-20">
         <div className="text-black bg-[#036494] p-5 md:p-10 w-full max-w-md rounded-lg my-20 shadow-2xl">
           <div className="flex items-center gap-3 mb-10">
-            <h1 className="text-2xl">Login</h1>
+            <h1 className="text-2xl">Sign up</h1>
             <div
-              className="flex-1 h-[2px] bg-pink-100"
+              className="flex-1 w-full h-[2px] bg-[#ffa62f]}"
               style={{ maxWidth: "80px" }}
             ></div>
           </div>
           <form
-            onSubmit={handleSubmit(handleLogin)}
+            onSubmit={handleSubmit(handleSignUp)}
             action=""
             className="text-right flex flex-col gap-2"
           >
-            {loginError && (
-              <p className="text-red-400 text-left ml-5">
-                Please check email & password
+            <input
+              {...register("displayName", { required: "Name is required!" })}
+              className="py-3 px-5 rounded-full focus:outline-none bg-[#07273a] focus:bg-[#0a2e43] text-white w-full"
+              type="text"
+              name="displayName"
+              placeholder="Full Name..."
+            />
+            {errors.displayName?.message && (
+              <p className="text-red-600 text-left ml-5">
+                {errors.displayName?.message}
               </p>
             )}
             <input
@@ -63,6 +77,12 @@ const Login = () => {
               name="email"
               placeholder="Email..."
             />
+            {error?.message ===
+              "Firebase: Error (auth/email-already-in-use)." && (
+              <p className="text-red-400 text-left ml-5">
+                Email already in use!
+              </p>
+            )}
             {errors.email?.message && (
               <p className="text-red-400 text-left ml-5">
                 {errors.email?.message}
@@ -71,6 +91,7 @@ const Login = () => {
             <input
               {...register("password", {
                 required: "Password is required!",
+                minLength: { value: 6, message: "Password min length is 6" },
               })}
               className="py-3 px-5 rounded-full focus:outline-none bg-[#07273a] focus:bg-[#0a2e43] text-white w-full"
               type="password"
@@ -82,31 +103,35 @@ const Login = () => {
                 {errors.password?.message}
               </p>
             )}
+            <input
+              {...register("confirmPassword")}
+              className="py-3 px-5 rounded-full focus:outline-none bg-[#07273a] focus:bg-[#0a2e43] text-white w-full"
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm password..."
+            />
+            {conPass !== "" && conPass !== pass && (
+              <p className="text-red-400 text-left ml-5">
+                Password Doesn't Match
+              </p>
+            )}
+
             <div className=" flex justify-between items-center mt-5">
-              <Link to="/signup">
-                <li className="flex items-center gap-3 text-slate-400 hover:text-red-300 hover:underline">
-                  <BsArrowLeft></BsArrowLeft> Sign up here
+              <Link to="/login">
+                <li className="flex items-center gap-3 text-slate-400 hover:text-yellow-300 hover:underline">
+                  <BsArrowLeft></BsArrowLeft> Back to login
                 </li>
               </Link>
               <input
-                className="cursor-pointer bg-[#ffbc23] hover:bg-[#fb6d59] hover:shadow-md text-black px-6 py-2 rounded-full"
+                className="cursor-pointer bg-yellow-500 hover:bg-[#f2a70c] hover:shadow-md text-black px-6 py-2 rounded-full"
                 type="submit"
-                value="Login"
+                value="Sign up"
               />
             </div>
           </form>
-          <div className="mt-3">
-            <ul className="flex gap-5 justify-end items-center mt-10">
-              <Link to="/reset-password">
-                <li className="text-slate-400 hover:text-[#ff1e75] hover:underline">
-                  Forget Password?
-                </li>
-              </Link>
-            </ul>
-          </div>
           <SocialLogin></SocialLogin>
         </div>
-        <div className="h-95 ">
+        <div className="">
           <img src={loginImage} alt="" />
         </div>
       </div>
@@ -114,4 +139,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
