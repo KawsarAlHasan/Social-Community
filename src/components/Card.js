@@ -51,12 +51,11 @@ const Card = () => {
             <div className="flex justify-between">
               <div>
                 <h4
-                  className="ml-2 font-semibold tooltip tooltip-primary hover:text-blue-600 hover:underline cursor-pointer"
+                  className="ml-2 mt-3 font-semibold tooltip tooltip-primary hover:text-blue-600 hover:underline cursor-pointer"
                   data-tip="Nahid Ahmmed Likhon"
                 >
                   Nahid Ahmmed Likhon
                 </h4>
-                <p className="text-zinc-400 ml-2">{comment.text}</p>
               </div>
               <div>
                 <div className="flex text-blue-600 text-xl ml-52 space-x-1 hover:bg-blue-200 hover:cursor-pointer p-1 rounded-md mb-0 duration-300">
@@ -76,7 +75,7 @@ const Card = () => {
 
           <div className="card w-full bg-base-100 shadow-xl rounded-none">
             <figure className="w-full">
-              <img className="w-full" src={comment.image} alt="Shoes" />
+              <img className="w-full" src={comment.image} />
             </figure>
             <div className="flex justify-between mt-4">
               <div className="ml-3 space-x-1 flex">
