@@ -40,7 +40,7 @@ const Post = () => {
     });
   };
   return (
-    <div className="card w-10/12 h-40 bg-base-100 border bottom-1 mx-auto rounded-md mt-16">
+    <div className="card w-10/12 h-40 bg-base-100 border bottom-1 mx-auto rounded-md">
       <div className="card-body ">
         <div className="avatar">
           <div className="ml-0 w-12 h-12 rounded-full">

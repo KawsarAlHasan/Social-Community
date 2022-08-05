@@ -1,14 +1,9 @@
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Login from "./authentication/Login/Login";
-import ResetPassword from "./authentication/Login/ResetPassword";
-import SignUp from "./authentication/Login/SignUp";
-import PrivateRoutes from "./authentication/routes/PrivateRoutes";
-import RedirectToAccount from "./authentication/routes/RedirectToAccount";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
-import NotFound from "./pages/NotFound/NotFound";
 import UserProfile from "./pages/UserProfile/UserProfile";
+import MyNetwork from "./pages/MyNetwork/MyNetwork";
 
 function App() {
   return (
@@ -17,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/network" element={<MyNetwork />} />
         </Routes>
       </Navbar>
     </div>

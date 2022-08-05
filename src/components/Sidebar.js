@@ -1,17 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../firebase.init";
-import img from '../assets/images/SabujMahonto.jpg'
 
 const Sidebar = (props) => {
   const sectionRecent = ['node', 'react', 'mern-stack']
   const sectionGroups = ['react-community', 'programming-hero']
   const sectionHashTags = ['boycot-india', 'careers', 'entrepreneurship']
 
-  const [user] = useAuthState(auth);
   return (
-    <div className="mt-14">
+    <div className="">
       {/* first part */}
       <div className="card sm:w-10/12 md:w-64 sm:mx-auto bg-base-100 shadow-xl">
         <div className=" h-20 card place-items-center">
@@ -24,17 +20,18 @@ const Sidebar = (props) => {
           <div className="avatar">
             <div className="w-24 rounded-full ring ring-white ring-offset-base-100 ring-offset-2">
               <img
-                src={user?.photoURL ? user?.photoURL : img} alt='img'
+                src="https://placeimg.com/192/192/people"
+                alt="no internet"
               />
             </div>
           </div>
         </div>
         <div className=" card place-items-center pt-10">
           <Link to="/#" className="font-bold">
-          {user.displayName ? user.displayName : "Sabuj Mahonto"}
+            Smriti Mandhana
           </Link>
           <h2 className="text-gray-400 text-sm font-semibold px-3">
-           {user.email}
+            She is best batter in the world
           </h2>
         </div>
         <div className="divider mb-2"></div>

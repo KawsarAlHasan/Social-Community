@@ -4,8 +4,8 @@ import WidgetsImg from '../assets/images/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qF
 
 function UserWidgets() {
   return (
-    <div className=''>
-      <div className="card sm:mx-auto md:mx-0 sm:w-5/6 md:w-80 bg-base-100 shadow-xl mb-2 p-2 ">
+    <div>
+      <div className="card sm:mx-auto md:mx-0 sm:w-5/6 md:w-80 bg-base-100 shadow-xl mb-2 p-2">
         <div className="flex justify-between my-2">
           <Link
             to="/#"
