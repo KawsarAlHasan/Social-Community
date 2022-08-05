@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
-import img from '../assets/images/logo.png'
+import img from '../assets/images/SabujMahonto.jpg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
@@ -15,7 +15,7 @@ const Navbar = ({ children }) => {
 
   const logout = () => {
     signOut(auth);
-    navigate("/login");
+    navigate("/");
   };
   const menuItems = (
     <>
@@ -58,7 +58,7 @@ const Navbar = ({ children }) => {
             </Link>
           </li>
           <li>
-            <Link to="/logOut" onClick={logout} className="hover:text-gray-900">
+            <Link to="/" onClick={logout} className="hover:text-gray-900">
               Logout
             </Link>
           </li>
