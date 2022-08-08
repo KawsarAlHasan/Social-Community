@@ -13,13 +13,13 @@ import axios from "axios";
 const Card = () => {
   const [comments, setComments] = useState([]);
   const [write, setWrite] = useState();
-
+  console.log(write);
   useEffect(() => {
     axios.get("https://mmh-server.herokuapp.com/post").then((res) => {
       setComments(res.data);
     });
   }, []);
-  const commenthandle = () => {
+  const commenthandle = (e) => {
     setWrite(
       <div>
         <textarea
@@ -114,7 +114,7 @@ const Card = () => {
                   </div>
                   <div>
                     <button
-                      onClick={() => commenthandle(comment)}
+                      onClick={() => commenthandle(comment._id)}
                       className="text-slate-600 inline-flex justify-center hover:bg-zinc-200 p-2 duration-200"
                     >
                       <div>
