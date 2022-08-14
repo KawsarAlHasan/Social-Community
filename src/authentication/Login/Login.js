@@ -1,15 +1,15 @@
 import React from "react";
-import loginImage from "../../assets/images/download.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import SocialLogin from "../Login/SocialLogin";
-import { BsArrowLeft } from "react-icons/bs";
 import {
   useAuthState,
-  useSignInWithEmailAndPassword,
+  useSignInWithEmailAndPassword
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import auth from "../../firebase.init";
+import { BsArrowLeft } from "react-icons/bs";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import loginImage from "../../assets/images/download.png";
 import Loading from "../../components/Loading";
+import auth from "../../firebase.init";
+import SocialLogin from "../Login/SocialLogin";
 
 const Login = () => {
   const [userAuth] = useAuthState(auth);

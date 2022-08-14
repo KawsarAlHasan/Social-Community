@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from 'react-router-dom';
+import img from '../assets/images/SabujMahonto.jpg';
 import auth from "../firebase.init";
-import img from '../assets/images/SabujMahonto.jpg'
 
 const Sidebar = (props) => {
   const sectionRecent = ['node', 'react', 'mern-stack']
@@ -31,10 +31,10 @@ const Sidebar = (props) => {
         </div>
         <div className=" card place-items-center pt-10">
           <Link to="/#" className="font-bold">
-          {user.displayName ? user.displayName : "Sabuj Mahonto"}
+          {user?.displayName ? user?.displayName : "Sabuj Mahonto"}
           </Link>
           <h2 className="text-gray-400 text-sm font-semibold px-3">
-           {user.email}
+           {user?.email}
           </h2>
         </div>
         <div className="divider mb-2"></div>

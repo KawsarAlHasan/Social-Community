@@ -28,6 +28,12 @@ const Navbar = ({ children }) => {
         </Link>
       </li>
       <li>
+        <Link to="/dashboard" className="hover:text-gray-900">
+          Dashboard
+        </Link>
+      </li>
+      
+      <li>
         <Link to="/jobs" className="hover:text-gray-900">
           Jobs
         </Link>
