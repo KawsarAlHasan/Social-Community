@@ -16,11 +16,13 @@ const MyNetwork = () => {
     });
   }, []);
 
-  console.log(card);
   const deleteCard = (e) => {
-    console.log(e);
     axios.delete(`https://mmh-server.herokuapp.com/post/${e}`).then((res) => {
-      setCard(res.data);
+      const realData = res.data;
+      if (realData.deletedCount > 0) {
+        const remaining = card.filter((card) => card._id !== realData._id);
+        setCard(remaining);
+      }
     });
   };
 

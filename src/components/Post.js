@@ -35,7 +35,6 @@ const Post = () => {
         };
         reset();
         axios.post(`https://mmh-server.herokuapp.com/post`, product);
-        console.log(product);
       }
     });
   };

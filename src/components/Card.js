@@ -9,33 +9,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Comments from "./comments/Comments";
 
 const Card = () => {
   const [comments, setComments] = useState([]);
-  const [write, setWrite] = useState();
-  console.log(write);
+
   useEffect(() => {
     axios.get("https://mmh-server.herokuapp.com/post").then((res) => {
       setComments(res.data);
     });
   }, []);
-  const commenthandle = (e) => {
-    setWrite(
-      <div>
-        <textarea
-          className="input w-full"
-          placeholder="Add a comment..."
-        ></textarea>
-        <div className="flex">
-          <button className="ml-4 bg-blue-600 text-white font-bold text-sm px-2 mb-1 rounded-3xl p-1">
-            POST
-          </button>
-          <button className="ml-2 bg-blue-600 text-white font-bold text-sm px-2 mb-1 rounded-3xl p-1">
-            EDIT
-          </button>
-        </div>
-      </div>
-    );
+
+  const commentPost = (e) => {
+    e.preventDefault();
+    const post = e.target.comment.value;
+    console.log(post);
+    axios.post(`https://mmh-server.herokuapp.com/comment`, { post });
   };
 
   return (
@@ -113,10 +102,7 @@ const Card = () => {
                     </button>
                   </div>
                   <div>
-                    <button
-                      onClick={() => commenthandle(comment._id)}
-                      className="text-slate-600 inline-flex justify-center hover:bg-zinc-200 p-2 duration-200"
-                    >
+                    <button className="text-slate-600 inline-flex justify-center hover:bg-zinc-200 p-2 duration-200">
                       <div>
                         <FontAwesomeIcon icon={faComment} />
                       </div>
@@ -150,7 +136,29 @@ const Card = () => {
             </div>
           </div>
           <div>
-            <p>{write}</p>
+            <div>
+              <form onSubmit={commentPost}>
+                <label>
+                  <input
+                    name="comment"
+                    type="text"
+                    placeholder="Type here"
+                    class="input input-bordered input-info w-full max-w-xl"
+                  />
+                </label>
+                <input
+                  className="ml-1 bg-blue-600 w-20 mt-2 text-white font-bold text-sm px-2 mb-1 rounded-3xl p-1"
+                  type="submit"
+                  value="POST "
+                />
+              </form>
+            </div>
+            <div>
+              <p>
+                <Comments></Comments>
+                hello
+              </p>
+            </div>
           </div>
         </div>
       ))}
