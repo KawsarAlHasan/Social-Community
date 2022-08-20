@@ -5,6 +5,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { BsArrowLeft } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const MyNetwork = () => {
   return (
@@ -13,6 +15,13 @@ const MyNetwork = () => {
         <div className="mt-2 col-span-1">
           <div class="card h-auto w-80 mx-auto bg-base-100 shadow-xl">
             <div class="card-body">
+            <Link to="/" className="mb-2">
+          <button
+            className="bg-yellow-500 hover:bg-[#f2a70c] hover:shadow-md text-black px-4 py-2 rounded-full flex gap-3 items-center w-44"
+          >
+            <BsArrowLeft className="text-xl"></BsArrowLeft> Back to home 
+          </button>
+        </Link>
               <h2 class="card-title">Manage my network</h2>
               <ul class="menu bg-base-100 w-auto rounded-box gap-0">
                 <li>

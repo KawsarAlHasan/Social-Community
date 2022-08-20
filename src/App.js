@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import AddAdmin from './pages/Dashboard/AddAdmin'
 import AddUser from './pages/Dashboard/AddUser'
 import Dashboard from './pages/Dashboard/Dashboard'
+import MyNetwork from './pages/MyNetwork/MyNetwork'
 
 import Home from './pages/Home/Home'
 import NotFound from './pages/NotFound/NotFound'
@@ -23,6 +24,7 @@ function App() {
  
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/userProfile" element={<UserProfile></UserProfile>}></Route>
+        <Route path="/network" element={<MyNetwork></MyNetwork>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}>
           {/* root/dashboard/add-admin */}
           <Route path='/dashboard/add-admin' element={<AddAdmin/>} />
