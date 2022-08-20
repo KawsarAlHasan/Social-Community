@@ -43,7 +43,7 @@ function App() {
             <PrivateRoutes>
               <Home></Home>
               <Navbar></Navbar>
-              <Dashboard></Dashboard>
+             
               
             </PrivateRoutes>
           }
